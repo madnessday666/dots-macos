@@ -1,0 +1,13 @@
+{
+  "editor.moveLineDown": "shift+alt+down",
+  "editor.moveLineUp": "shift+alt+up",
+  "editor.moveWordLeft": "alt+b",
+  "editor.moveWordRight": "alt+f",
+  "editor.selectWordLeft": "shift+alt+left",
+  "editor.selectWordRight": "shift+alt+right",
+  "menu.file": "f10",
+  "panel.shorter": "shift+alt+k",
+  "panel.taller": "shift+alt+i",
+  "sidebar.narrower": "shift+alt+j",
+  "sidebar.wider": "shift+alt+l"
+}
