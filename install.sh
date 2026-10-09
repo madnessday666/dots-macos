@@ -9,7 +9,7 @@ BREW="/opt/homebrew/bin/brew"
 #########################
 
 echo "[Start] Initial setup started..."
-
+''
 ##################################################
 # 1. Install Homebrew (if not already installed) #
 ##################################################
@@ -80,6 +80,7 @@ CASKS=(
     datagrip
     docker
     elasticvue
+    floorp
     font-departure-mono-nerd-font
     font-jetbrains-mono-nerd-font
     icdiff
@@ -90,7 +91,6 @@ CASKS=(
     telegram
     yandextelemost
     vorssaint
-    waterfox
     zed
 )
 
@@ -210,7 +210,7 @@ echo "[dockutil] Managing app positions..."
 
 if command -v dockutil &> /dev/null; then
     APPS=(
-        '/Applications/Waterfox.app'
+        '/Applications/Floorp.app'
         '/Applications/IntelliJ IDEA.app'
         '/Applications/Zed.app'
         '/Applications/DataGrip.app'
