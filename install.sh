@@ -71,6 +71,7 @@ PACKAGES=(
     rust
     starship
     taplo
+    unar
 )
 
 CASKS=(
@@ -79,9 +80,9 @@ CASKS=(
     datagrip
     docker
     elasticvue
-    firefox@developer-edition
     font-departure-mono-nerd-font
     font-jetbrains-mono-nerd-font
+    icdiff
     intellij-idea
     kafkio
     omniwm
@@ -89,6 +90,7 @@ CASKS=(
     telegram
     yandextelemost
     vorssaint
+    waterfox
     zed
 )
 
@@ -208,7 +210,7 @@ echo "[dockutil] Managing app positions..."
 
 if command -v dockutil &> /dev/null; then
     APPS=(
-        '/Applications/Firefox Developer Edition.app'
+        '/Applications/Waterfox.app'
         '/Applications/IntelliJ IDEA.app'
         '/Applications/Zed.app'
         '/Applications/DataGrip.app'

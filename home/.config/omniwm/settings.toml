@@ -54,6 +54,7 @@ right = 0.0
 top = 0.0
 
 [general]
+animationSpeed = 2.5
 animationsEnabled = true
 defaultLayoutType = "niri"
 hotkeysEnabled = true
@@ -140,14 +141,14 @@ red = 0.3
 [quakeTerminal]
 animationDuration = 0.2
 autoHide = true
-backgroundBlurRadius = 4
+backgroundBlurRadius = 3
 backgroundEffect = "standardBlur"
 enabled = true
-heightPercent = 55.0
+heightPercent = 70.0
 monitorMode = "focusedWindow"
-opacity = 0.75
-position = "top"
-widthPercent = 100.0
+opacity = 1.0
+position = "center"
+widthPercent = 80.0
 
 [routing]
 mode = "macOS"
@@ -167,10 +168,14 @@ monitorName = "Built-in Retina Display"
 
 [statusBar]
 showAppNames = false
+showIcon = true
 showWorkspaceName = false
 useWorkspaceId = false
 
 [workspaceBar]
+autoHide = false
+autoHideHideDelayMilliseconds = 0.0
+autoHideRevealDelayMilliseconds = 0.0
 backgroundOpacity = 0.1
 deduplicateAppIcons = false
 enabled = false
@@ -181,6 +186,8 @@ hideInNativeFullscreen = false
 hoverPreviewsEnabled = true
 notchActiveZoneWidth = 180.0
 notchMode = "moveBelowMenuBar"
+notificationBadgeRefreshIntervalSeconds = 5.0
+notificationBadges = "off"
 position = "overlappingMenuBar"
 reserveLayoutSpace = false
 revealHoldMilliseconds = 200.0
@@ -197,6 +204,13 @@ xOffset = 0.0
 yOffset = 0.0
 
 [workspaceBar.iconOverrides]
+
+[[appRules]]
+axRole = "AXWindow"
+axSubrole = "AXStandardWindow"
+bundleId = "com.apple.finder"
+id = "86204E69-CADD-4CAB-A419-AE74EEA18527"
+layout = "float"
 
 [[appRules]]
 assignToWorkspace = "1"
@@ -994,6 +1008,10 @@ id = "openCommandPalette"
 [[hotkeys]]
 binding = "Option+Shift+R"
 id = "raiseAllFloatingWindows"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "toggleFloatingFocus"
 
 [[hotkeys]]
 binding = "Unassigned"
