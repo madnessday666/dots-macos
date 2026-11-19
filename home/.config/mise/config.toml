@@ -1,0 +1,4 @@
+[tools]
+acli = "latest"
+java = "temurin-21"
+node = "lts"

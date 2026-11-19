@@ -1,0 +1,100 @@
+{
+  // APPEARENCE
+  "theme": {
+    "mode": "system",
+    "light": "Nord Light - No Italics",
+    "dark": "Nord Dark - No Italics",
+  },
+  "ui_font_size": 14.0,
+  "ui_font_family": "Nordwand Mono",
+  "buffer_font_size": 13.0,
+  "buffer_font_family": "Nordwand Mono",
+  "base_keymap": "JetBrains",
+  "project_panel": {
+    "dock": "left",
+  },
+  "agent_ui_font_size": 13.0,
+  "agent": {
+    "threads_sidebar": {
+      "position": "right",
+    },
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+  "wrap_guides": [120],
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000,
+    },
+  },
+  "inlay_hints": {
+    "show_background": true,
+    "enabled": true,
+  },
+
+  // FORMATTER
+  "use_on_type_format": true,
+  "format_on_save": "on",
+
+  // FILE TYPES MAPPING
+  "file_types": {
+    "HTML": ["*.xml"],
+  },
+
+  // LANGUAGES
+  "languages": {
+    "Rust": {
+      "formatter": {
+        "external": {
+          "command": "rustfmt",
+          "arguments": ["--edition", "2021"],
+        },
+      },
+      "format_on_save": "on",
+    },
+    "TOML": {
+      "formatter": {
+        "external": {
+          "command": "taplo",
+          "arguments": ["fmt", "--option", "align_entries=true", "-"],
+        },
+      },
+      "format_on_save": "on",
+    },
+  },
+
+  // LSP
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "check": {
+          "command": "clippy",
+        },
+        "inlayHints": {
+          "maxLength": 60,
+        },
+      },
+    },
+  },
+
+  // TERMINAL
+  "terminal": {
+    "shell": {
+      "with_arguments": {
+        "program": "zsh",
+        "args": ["-l", "-i"],
+      },
+    },
+    "env": {
+      "STARSHIP_INITIALIZED": "",
+    },
+    "font_family": "DepartureMono Nerd Font Mono",
+    "line_height": "standard",
+  },
+
+  // MISC
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+}
