@@ -1,5 +1,5 @@
 format = """\
-(($status)($cmd_duration)\n)\
+(($status )$cmd_duration\n)\
 ╔═$time \
 $username\
 $directory\
@@ -30,6 +30,11 @@ symbol   = "ERROR"
 # success_style = "fg:time"
 # format = "[$symbol]($style)[$success_symbo]($success_style)\n"
 format = "[$symbol]($style)"
+
+[cmd_duration]
+disabled = false
+format   = "([took  $duration]($style bold))"
+min_time = 500
 
 [time]
 disabled    = false
@@ -159,8 +164,3 @@ format   = "( and [$symbol$version]($style bold))"
 [docker_context]
 disabled = false
 symbol   = " "
-
-[cmd_duration]
-disabled = false
-format   = "( [took  $duration]($style bold))"
-min_time = 500
