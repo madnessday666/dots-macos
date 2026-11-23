@@ -8,6 +8,7 @@ $git_branch\
 $git_commit\
 ${custom.git_last_commit_days}\
 $git_status\
+${custom.git_stash}\
 ( \
     via\
     $python\
@@ -111,13 +112,13 @@ format = "( [$output](yellow))"
 [git_status]
 disabled = false
 
-format = "([$staged](green)[$untracked](red)[$modified](yellow)[$deleted](red)([$stashed](white)))"
+format = "([$staged](green)[$untracked](red)[$modified](yellow)[$deleted](red))"
 
 staged    = " +$count"
 untracked = " !$count"
 modified  = " !$count"
 deleted   = " !$count"
-stashed   = "  $count"
+stashed   = ""
 
 conflicted = "="
 ahead      = "⇡"
@@ -125,6 +126,21 @@ behind     = "⇣"
 diverged   = "⇕"
 up_to_date = ""
 renamed    = "R"
+
+[custom.git_stash]
+when = 'git rev-parse --verify refs/stash >/dev/null 2>&1'
+command = '''
+branch=$(git symbolic-ref --short HEAD 2>/dev/null)
+count=$(git stash list | wc -l | tr -d " ")
+icon=" "
+
+if [ -n "$branch" ] && git stash list | grep -qE "(WIP on|On) ${branch}:"; then
+  printf "\033[1;32m%s\033[0m" "$icon$count"
+else
+  printf "\033[1;37m%s\033[0m" "$icon$count"
+fi
+'''
+format = " $output"
 
 [nodejs]
 disabled       = false
